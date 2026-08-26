@@ -1,0 +1,27 @@
+## Description
+
+Briefly describe your changes.
+
+## Type of Change
+
+* [ ] Bug fix
+* [ ] New feature
+* [ ] Breaking change
+* [ ] Documentation update
+
+## Testing
+
+* [ ] Unit tests pass
+* [ ] Integration tests pass
+* [ ] Manual testing completed
+
+## Screenshots
+
+Add screenshots if applicable.
+
+## Checklist
+
+* [ ] Code follows style guidelines
+* [ ] Self-review completed
+* [ ] Documentation updated
+* [ ] No breaking changes
