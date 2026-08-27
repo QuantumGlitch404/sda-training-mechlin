@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A professional responsive developer dashboard built with HTML5, CSS and JavaScript."
+    >
+
+    <meta name="author" content="QuantumGlitch404">
+
+    <title>DevBoard — Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+    <style>
+    /* Body / normal interface text */
+    body {
+        font-family: "Manrope", sans-serif;
+    }
+
+    /* Main and section headings */
+    h1,
+    h2,
+    h3 {
+        font-family: "Bitter", serif;
+    }
+
+    /* Numbers / metrics / technical values */
+    .stat-value,
+    .metric,
+    .report-item strong,
+    .stat-change,
+    .chart-y-axis,
+    .chart-labels {
+        font-family: "IBM Plex Mono", monospace;
+    }
+
+    /* Keep the logo mark technical */
+    .brand-mark {
+        font-family: "IBM Plex Mono", monospace;
+    }
+</style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="topbar">
+
+        <nav class="topbar-nav" aria-label="Primary navigation">
+
+            <a href="#dashboard" class="brand">
+                <span class="brand-mark">&lt;/&gt;</span>
+                <span>DevBoard</span>
+            </a>
+
+            <div class="topbar-actions">
+
+    <a href="#home" class="top-link">
+        Home
+    </a>
+
+    <a href="#analytics" class="top-link">
+        Analytics
+    </a>
+
+    <a href="#" class="top-link">
+        Settings
+    </a>
+
+    
+
+    <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-sidebar"
+    >
+        ☰
+    </button>
+
+</div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Main Application Layout -->
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+<aside class="sidebar" id="mobile-sidebar">
+
+            <nav class="sidebar-nav" aria-label="Dashboard navigation">
+
+                <div class="nav-group">
+
+                    <p class="nav-label">Overview</p>
+
+                    <a href="#dashboard" class="sidebar-link active">
+                        <span class="sidebar-icon">⌂</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    
+
+                </div>
+
+
+                <div class="nav-group">
+
+                    <p class="nav-label">Management</p>
+
+                    <a href="#users" class="sidebar-link">
+                        <span class="sidebar-icon">◎</span>
+                        <span>Users</span>
+                    </a>
+
+                    <a href="#reports" class="sidebar-link">
+                        <span class="sidebar-icon">▤</span>
+                        <span>Reports</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content" id="dashboard">
+
+            <section class="page-header">
+
+                <div>
+
+                    <p class="eyebrow">OVERVIEW</p>
+
+                    <h1>Dashboard</h1>
+
+                    <p class="page-description">
+                        Monitor your application and development activity.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section
+                class="stats-grid"
+                id="users"
+                aria-label="Dashboard statistics"
+            >
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-title">
+                            Total Users
+                        </span>
+
+                        <span class="stat-icon">
+                            ◎
+                        </span>
+                    </div>
+
+                    <p class="stat-value">1,234</p>
+
+                    <div class="stat-change positive">
+                        <span>↑ 12.5%</span>
+                        <span>from last month</span>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-title">
+                            Revenue
+                        </span>
+
+                        <span class="stat-icon">
+                            $
+                        </span>
+                    </div>
+
+                    <p class="stat-value">$45,678</p>
+
+                    <div class="stat-change positive">
+                        <span>↑ 8.2%</span>
+                        <span>from last month</span>
+                    </div>
+
+                </article>
+
+
+                <article class="stat-card">
+
+                    <div class="stat-top">
+                        <span class="stat-title">
+                            Orders
+                        </span>
+
+                        <span class="stat-icon">
+                            #
+                        </span>
+                    </div>
+
+                    <p class="stat-value">567</p>
+
+                    <div class="stat-change positive">
+                        <span>↑ 15.3%</span>
+                        <span>from last month</span>
+                    </div>
+
+                </article>
+
+
+                
+
+            </section>
+
+
+            <!-- Main Dashboard Panels -->
+            <section class="dashboard-columns">
+
+                <!-- Analytics -->
+                <article class="panel analytics-panel" id="analytics">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <p class="panel-label">PERFORMANCE</p>
+                            <h2>Traffic Overview</h2>
+                        </div>
+
+                        <select
+                            class="period-select"
+                            aria-label="Select time period"
+                        >
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 90 days</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="chart-y-axis">
+                            <span>10K</span>
+                            <span>7.5K</span>
+                            <span>5K</span>
+                            <span>2.5K</span>
+                            <span>0</span>
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="grid-line line-1"></div>
+                            <div class="grid-line line-2"></div>
+                            <div class="grid-line line-3"></div>
+                            <div class="grid-line line-4"></div>
+                            <div class="grid-line line-5"></div>
+
+                            <div class="chart-bars">
+
+                                <span style="height: 42%"></span>
+                                <span style="height: 58%"></span>
+                                <span style="height: 49%"></span>
+                                <span style="height: 71%"></span>
+                                <span style="height: 64%"></span>
+                                <span style="height: 82%"></span>
+                                <span style="height: 92%"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-labels">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- Reports -->
+            <section class="panel reports-panel" id="reports">
+
+                <div class="panel-header">
+
+                    <div>
+                        <p class="panel-label">SYSTEM</p>
+                        <h2>Project Reports</h2>
+                    </div>
+
+                    <button class="secondary-button" type="button">
+                        Export
+                    </button>
+
+                </div>
+
+
+                <div class="report-grid">
+
+                    <div class="report-item">
+                        <span class="report-key">Build Status</span>
+                        <strong class="success-text">Passing</strong>
+                    </div>
+
+                    <div class="report-item">
+                        <span class="report-key">Deployments</span>
+                        <strong>24</strong>
+                    </div>
+
+                    <div class="report-item">
+                        <span class="report-key">Open Issues</span>
+                        <strong>12</strong>
+                    </div>
+
+                    <div class="report-item">
+                        <span class="report-key">Code Coverage</span>
+                        <strong>94.6%</strong>
+                    </div>
+
+                </div>
+
+            </section>            
+
+        </main>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <span>
+            © 2026 DevBoard
+        </span>
+
+        <span>
+            Built with HTML5, CSS & JavaScript
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
