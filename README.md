@@ -78,3 +78,24 @@ This repository contains my 4-week Mechlin Tech training work.
 - useCallback
 - Performance Optimization
 - React Dashboard
+
+### Day 5 - API & Real-Time Data
+
+- REST API Consumption
+- HTTP Methods
+- HTTP Status Codes
+- API Headers
+- API Error Handling
+- Caching
+- Request Retry Logic
+- Exponential Backoff
+- WebSocket Connections
+- WebSocket Reconnection
+- JSON Message Handling
+- Message Queuing
+- Heartbeat
+- Real-Time Data
+- Connection Status
+- Data Synchronization
+- Performance Optimization
+- Real-Time Dashboard
