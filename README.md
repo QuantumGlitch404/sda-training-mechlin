@@ -99,3 +99,28 @@ This repository contains my 4-week Mechlin Tech training work.
 - Data Synchronization
 - Performance Optimization
 - Real-Time Dashboard
+
+### Day 6 - Documentation & Agile
+
+- Technical Documentation
+- System Architecture
+- Architecture Diagrams
+- UML Diagrams
+- Data Flow Diagrams
+- Sequence Diagrams
+- API Documentation
+- Code Documentation
+- User Guides
+- Technical Specifications
+- Agile Methodologies
+- Sprint Planning
+- User Stories
+- Acceptance Criteria
+- Daily Standups
+- Sprint Reviews
+- Retrospectives
+- Backlog Management
+- Documentation Standards
+- Reusable Documentation Templates
+- Version Control
+- Documentation Review Process
