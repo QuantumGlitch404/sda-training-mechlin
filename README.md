@@ -124,3 +124,72 @@ This repository contains my 4-week Mechlin Tech training work.
 - Reusable Documentation Templates
 - Version Control
 - Documentation Review Process
+
+### Day 7 - Weekly Review
+
+- Week 1 Code Review
+- Code Quality Assessment
+- Readability and Maintainability
+- Performance Review
+- SOLID Principles
+- Design Patterns
+- Security Review
+- Input Validation
+- Testing and Edge Cases
+- Documentation Review
+- Week 1 Achievement Summary
+- Project Demonstration
+- Demo Presentation
+- Lessons Learned
+- Areas for Improvement
+- Week 2 Preparation
+- Continuous Improvement
+
+### Day 8 - Node.js Deep Dive
+
+- Node.js Fundamentals
+- Event Loop
+- Asynchronous Programming
+- Callbacks
+- Promises
+- Async/Await
+- Streams
+- Buffers
+- CommonJS Modules
+- ES6 Modules
+- Modular Node.js Architecture
+- Service Layer Architecture
+- Event-Driven Architecture
+- EventEmitter
+- Node.js Clustering
+- Worker Processes
+- CPU Utilization
+- Authentication
+- Password Hashing
+- JWT Authentication
+- Session Management
+- Authentication Middleware
+- Express Routing
+- Security Middleware
+- Helmet
+- CORS
+- Rate Limiting
+- Compression
+- Centralized Error Handling
+- Error Handling Middleware
+- Winston Logging
+- Structured Logging
+- Performance Monitoring
+- Memory Monitoring
+- Process Monitoring
+- Socket.IO
+- Real-Time Communication
+- WebSocket Events
+- API Development
+- Health Check API
+- User API
+- Product API
+- Order API
+- Performance API
+- Node.js Architecture Documentation
+- Testing and Validation
