@@ -142,7 +142,6 @@ This repository contains my 4-week Mechlin Tech training work.
 - Demo Presentation
 - Lessons Learned
 - Areas for Improvement
-- Week 2 Preparation
 - Continuous Improvement
 
 ### Day 8 - Node.js Deep Dive
@@ -193,3 +192,59 @@ This repository contains my 4-week Mechlin Tech training work.
 - Performance API
 - Node.js Architecture Documentation
 - Testing and Validation
+
+### Day 9 - Express & Middleware
+
+- Express.js Fundamentals
+- Express Application Setup
+- Middleware Architecture
+- Application Middleware
+- Router Middleware
+- Custom Middleware
+- Third-Party Middleware
+- Error Handling Middleware
+- Authentication Middleware
+- Authorization Middleware
+- Optional Authentication
+- Input Validation
+- Request Validation
+- User Validation
+- Login Validation
+- Product Validation
+- Order Validation
+- ID Validation
+- Pagination Validation
+- Input Sanitization
+- Modular Route Handlers
+- User Routes
+- Product Routes
+- Order Routes
+- Route Parameters
+- Query Parameters
+- Request Body Handling
+- Health Check API
+- Performance Monitoring
+- CORS
+- Helmet
+- Rate Limiting
+- Compression
+- Morgan Request Logging
+- Winston Logging
+- Centralized Error Handling
+- JWT Authentication
+- Password Hashing
+- Role-Based Authorization
+- Error Responses
+- 404 Handling
+- Express Security
+- Separation of Concerns
+- Service Layer Architecture
+- Express Architecture Documentation
+- Middleware Testing
+- Route Testing
+- Authentication Testing
+- Authorization Testing
+- Validation Testing
+- Error Handling Testing
+- Logging Testing
+- Performance Testing
