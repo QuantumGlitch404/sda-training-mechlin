@@ -304,3 +304,49 @@ This repository contains my 4-week Mechlin Tech training work.
 - Index Testing
 - PostgreSQL Query Testing
 - MongoDB Model Testing
+
+### Day 11 - REST API Best Practices
+
+- REST API Design
+- Resource-Based URLs
+- HTTP Methods
+- HTTP Status Codes
+- Content Negotiation
+- Pagination
+- API Versioning
+- URL Versioning
+- Header Versioning
+- Redis Caching
+- HTTP Caching
+- Cache Keys
+- Cache TTL
+- Cache Hit and Miss Handling
+- Rate Limiting
+- General Rate Limiting
+- Strict Rate Limiting
+- Login Rate Limiting
+- API Key Rate Limiting
+- Authentication
+- Authorization
+- Input Validation
+- API Security
+- Response Compression
+- Database Optimization
+- Query Optimization
+- Database Indexing
+- Caching Strategies
+- Connection Pooling
+- Load Balancing
+- OpenAPI
+- Swagger
+- Swagger UI
+- API Documentation
+- Centralized Error Handling
+- API Testing
+- Error Handling Testing
+- Rate Limiting Testing
+- Caching Testing
+- Documentation Testing
+- Performance Testing
+- Response Time Testing
+- REST API Design Documentation
