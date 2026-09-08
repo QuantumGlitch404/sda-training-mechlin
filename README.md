@@ -248,3 +248,59 @@ This repository contains my 4-week Mechlin Tech training work.
 - Error Handling Testing
 - Logging Testing
 - Performance Testing
+
+### Day 10 - MongoDB & SQL
+
+- MongoDB Fundamentals
+- MongoDB Document Model
+- NoSQL Databases
+- MongoDB CRUD Operations
+- MongoDB Aggregation
+- MongoDB Indexing
+- MongoDB Schema Design
+- Mongoose
+- MongoDB Connection Management
+- MongoDB Connection Status
+- MongoDB User Model
+- Mongoose Schema
+- Mongoose Indexes
+- Virtual Properties
+- Password Hashing
+- Password Comparison
+- JWT Authentication
+- User Credential Validation
+- User Statistics
+- PostgreSQL Fundamentals
+- Relational Database Model
+- SQL
+- PostgreSQL Connection Pooling
+- PostgreSQL Connection Management
+- PostgreSQL Query Execution
+- PostgreSQL Product Model
+- Product CRUD Operations
+- SQL Joins
+- Filtering
+- Sorting
+- Pagination
+- Product Statistics
+- Category Statistics
+- Database Migrations
+- Users Table
+- Products Table
+- Orders Table
+- Order Items Table
+- Reviews Table
+- Database Indexes
+- Hybrid Database Architecture
+- MongoDB and PostgreSQL Integration
+- Data Modeling
+- Data Integrity
+- Query Performance Optimization
+- MongoDB Best Practices
+- PostgreSQL Best Practices
+- Database Architecture Documentation
+- Database Testing
+- Migration Rollback
+- Index Testing
+- PostgreSQL Query Testing
+- MongoDB Model Testing
