@@ -1,0 +1,34 @@
+{
+  "name": "day11-rest-api",
+  "version": "1.0.0",
+  "description": "Mechlin SDA Training Day 11 - REST API Best Practices",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node tests/api.test.js"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "express",
+    "redis",
+    "swagger",
+    "rate-limit",
+    "caching"
+  ],
+  "author": "Meezab Momin",
+  "license": "MIT",
+  "dependencies": {
+    "compression": "^1.8.1",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "redis": "^5.8.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.1.4"
+  }
+}
