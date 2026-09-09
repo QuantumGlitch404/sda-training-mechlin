@@ -350,3 +350,63 @@ This repository contains my 4-week Mechlin Tech training work.
 - Performance Testing
 - Response Time Testing
 - REST API Design Documentation
+
+### Day 12 - Authentication & RBAC
+
+- JWT Authentication
+- JWT Access Tokens
+- JWT Refresh Tokens
+- Token Verification
+- Token Expiration
+- Token Security
+- Password Hashing
+- Password Comparison
+- Password Validation
+- Password Strength Rules
+- Authentication Middleware
+- Authorization Middleware
+- Optional Authentication
+- User Registration
+- User Login
+- Logout
+- Current User API
+- Protected Routes
+- Refresh Token API
+- Change Password
+- OAuth2
+- Social Login
+- Google OAuth
+- Facebook OAuth
+- GitHub OAuth
+- Passport.js
+- RBAC
+- Role-Based Access Control
+- User Roles
+- Admin Role
+- Moderator Role
+- User Role
+- Permission System
+- User Permissions
+- Product Permissions
+- Order Permissions
+- Analytics Permissions
+- System Permissions
+- Permission Checks
+- Any Permission Checks
+- All Permission Checks
+- Resource Ownership
+- Role-Based Authorization
+- Access Control
+- Secure Authentication Flow
+- Authentication Error Handling
+- Authorization Error Handling
+- Authentication Documentation
+- Authentication Testing
+- JWT Testing
+- Login Testing
+- Registration Testing
+- Token Refresh Testing
+- Password Validation Testing
+- Protected Route Testing
+- RBAC Testing
+- OAuth Configuration Testing
