@@ -1,0 +1,19 @@
+{
+  "name": "day13-api-documentation",
+  "version": "1.0.0",
+  "description": "Mechlin SDA Training Day 13 - API Documentation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/api.test.js",
+    "generate-postman": "node scripts/generatePostmanCollection.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.2.2"
+  }
+}

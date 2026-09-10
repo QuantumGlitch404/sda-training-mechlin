@@ -410,3 +410,39 @@ This repository contains my 4-week Mechlin Tech training work.
 - Protected Route Testing
 - RBAC Testing
 - OAuth Configuration Testing
+
+### Day 13 - API Documentation
+
+- OpenAPI Specification
+- Swagger JSDoc
+- Swagger UI
+- API Documentation Standards
+- Documentation Completeness
+- Documentation Accuracy
+- API Examples
+- API Versioning
+- Automated Documentation
+- Documentation Validation
+- Interactive API Testing
+- API Route Documentation
+- Security Schemes
+- Bearer Authentication Documentation
+- API Key Documentation
+- User API Documentation
+- GET Users API
+- GET User by ID API
+- PUT User API
+- DELETE User API
+- Error Response Documentation
+- Pagination Documentation
+- Postman Collection
+- Postman Bearer Authentication
+- Postman Environment Variables
+- Automated Postman Collection Generation
+- API Testing
+- Authentication Testing
+- Error Handling Testing
+- Swagger JSON Endpoint
+- Swagger UI Testing
+- API Documentation Guide
+- Documentation Best Practices
