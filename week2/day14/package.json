@@ -1,0 +1,18 @@
+{
+  "name": "day14-integration-review",
+  "version": "1.0.0",
+  "description": "Mechlin SDA Training Day 14 - Integration Review",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/integration.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.2.2"
+  }
+}
