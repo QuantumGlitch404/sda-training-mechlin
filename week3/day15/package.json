@@ -1,0 +1,18 @@
+{
+  "name": "day15-devops-environment",
+  "version": "1.0.0",
+  "description": "Mechlin SDA Training Day 15 - DevOps and Environment Management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node tests/config.test.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongoose": "^9.9.5",
+    "pg": "^8.16.3",
+    "redis": "^5.8.2",
+    "winston": "^3.17.0"
+  }
+}
