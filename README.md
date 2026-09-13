@@ -489,3 +489,44 @@ This repository contains my 4-week Mechlin Tech training work.
 - Backup Strategy
 - Security Checklist
 - Day 14 Testing and Validation
+
+### Day 15 - DevOps & Environment Management
+
+- DevOps Fundamentals
+- Development Environment
+- Staging Environment
+- Production Environment
+- Multi-Environment Configuration
+- Environment Variables
+- Configuration Management
+- Secrets Management
+- Secret Validation
+- Secret Encryption
+- Secret Decryption
+- AES-256-GCM
+- Infrastructure as Code
+- Docker
+- Docker Compose
+- MongoDB Infrastructure
+- PostgreSQL Infrastructure
+- Redis Infrastructure
+- Nginx Configuration
+- Monitoring
+- Health Checks
+- System Monitoring
+- Memory Monitoring
+- CPU Monitoring
+- Application Uptime
+- Logging
+- Winston
+- Log Levels
+- Development Logging
+- Staging Logging
+- Production Logging
+- Environment Testing
+- Security Testing
+- Environment Isolation
+- Deployment Configuration
+- DevOps Documentation
+- Environment Management Guide
+- DevOps Guide
