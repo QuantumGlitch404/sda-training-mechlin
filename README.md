@@ -530,3 +530,35 @@ This repository contains my 4-week Mechlin Tech training work.
 - DevOps Documentation
 - Environment Management Guide
 - DevOps Guide
+
+### Day 16 - Docker & Compose
+
+- Docker Fundamentals
+- Docker Images
+- Docker Containers
+- Dockerfile
+- Multi-Stage Docker Builds
+- Production Docker Image
+- Non-Root Containers
+- Docker Health Checks
+- Docker Compose
+- Multi-Service Applications
+- Docker Networking
+- Docker Volumes
+- MongoDB Container
+- PostgreSQL Container
+- Redis Container
+- Nginx Reverse Proxy
+- Nginx Rate Limiting
+- Nginx Security Headers
+- Prometheus Monitoring
+- Grafana Monitoring
+- Container Monitoring
+- Service Health Checks
+- Image Optimization
+- Docker Image Analysis
+- Docker Resource Monitoring
+- Docker Security
+- Docker Compose Infrastructure
+- Docker Optimization Script
+- Docker Documentation
