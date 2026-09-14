@@ -1,0 +1,13 @@
+{
+  "name": "day16-docker-compose",
+  "version": "1.0.0",
+  "description": "Mechlin SDA Training Day 16 - Docker and Compose",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node app/index.js",
+    "test": "node tests/validate.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
