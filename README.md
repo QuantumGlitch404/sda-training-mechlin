@@ -562,3 +562,35 @@ This repository contains my 4-week Mechlin Tech training work.
 - Docker Compose Infrastructure
 - Docker Optimization Script
 - Docker Documentation
+
+### Day 17 - Kubernetes Basics
+
+- Kubernetes Fundamentals
+- Kubernetes Cluster
+- Kubernetes Namespaces
+- Kubernetes Pods
+- Kubernetes Deployments
+- Kubernetes Services
+- Service Discovery
+- DNS-Based Service Discovery
+- Load Balancing
+- Kubernetes Ingress
+- Kubernetes ConfigMap
+- Kubernetes Secrets
+- PersistentVolume
+- PersistentVolumeClaim
+- Persistent Storage
+- MongoDB Deployment
+- PostgreSQL Deployment
+- Redis Deployment
+- Kubernetes Health Checks
+- Liveness Probes
+- Readiness Probes
+- Resource Requests
+- Resource Limits
+- Prometheus Monitoring
+- Kubernetes Network Policy
+- Kubernetes Logging
+- Kubernetes Service Networking
+- Kubernetes Application Deployment
+- Kubernetes Testing
