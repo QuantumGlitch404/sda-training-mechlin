@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: sda-training-app-policy
+  namespace: sda-training
+
+spec:
+  podSelector:
+    matchLabels:
+      app: sda-training
+      component: app
+
+  policyTypes:
+    - Ingress
+
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: sda-training
+      ports:
+        - protocol: TCP
+          port: 3000
