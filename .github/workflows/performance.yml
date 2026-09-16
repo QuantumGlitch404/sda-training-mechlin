@@ -1,42 +1,80 @@
-name: Performance Checks
+name: Performance Testing
 
 on:
+  push:
+    branches:
+      - main
+      - develop
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
-  performance:
-    name: Run Available Performance Checks
+  performance-test:
+    name: Performance Testing
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "18"
           cache: npm
-          cache-dependency-path: week3/day16/package-lock.json
+          cache-dependency-path: week3/day18/package-lock.json
 
-      - name: Install Day 16 dependencies
+      - name: Install dependencies
+        working-directory: week3/day18
+        run: npm ci
+
+      - name: Start Day 16 application
         working-directory: week3/day16
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+          npm ci
+          npm start > /tmp/day16-app.log 2>&1 &
+          echo $! > /tmp/day16-app.pid
 
-      - name: Run performance script when available
-        working-directory: week3/day16
+      - name: Wait for application
         run: |
-          if npm run | grep -q "performance"; then
-            npm run performance
-          else
-            echo "No performance script exists in week3/day16/package.json."
-            echo "The workflow completed safely without inventing a performance command."
+          for i in {1..30}; do
+            if curl -fsS http://localhost:3000/health; then
+              echo "Application is healthy."
+              exit 0
+            fi
+
+            sleep 2
+          done
+
+          echo "Application did not become healthy."
+          cat /tmp/day16-app.log
+          exit 1
+
+      - name: Install Artillery
+        run: npm install -g artillery
+
+      - name: Run Artillery load test
+        working-directory: week3/day18
+        run: artillery run artillery.config.yml
+
+      - name: Run K6 load test
+        working-directory: week3/day18
+        run: |
+          docker run --rm \
+            --add-host=host.docker.internal:host-gateway \
+            -v "$PWD:/scripts" \
+            loadimpact/k6 \
+            run /scripts/k6-load-test.js
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: "./week3/day18/lighthouse.config.js"
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Stop application
+        if: always()
+        run: |
+          if [ -f /tmp/day16-app.pid ]; then
+            kill "$(cat /tmp/day16-app.pid)" || true
           fi
