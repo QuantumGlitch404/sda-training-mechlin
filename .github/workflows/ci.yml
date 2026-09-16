@@ -1,0 +1,52 @@
+name: CI - Test and Validate
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "feature/**"
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Training Project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: week3/day16/package-lock.json
+
+      - name: Validate Day 18 files and Day 17 Kubernetes files
+        run: node week3/day18/tests/validate.js
+
+      - name: Install Day 16 dependencies
+        working-directory: week3/day16
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Run Day 16 tests when available
+        working-directory: week3/day16
+        run: npm run test --if-present
+
+      - name: Run Day 16 lint checks when available
+        working-directory: week3/day16
+        run: npm run lint --if-present
