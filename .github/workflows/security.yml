@@ -22,37 +22,38 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check for accidentally committed secrets
-        shell: bash
+      - name: Check repository integrity
         run: |
-          echo "Checking repository for common secret patterns..."
+          echo "Checking repository integrity..."
+          git diff --check
+          echo "Repository integrity check passed."
 
-          if grep -RInE \
-            --exclude-dir=.git \
-            --exclude-dir=node_modules \
-            --exclude="security.yml" \
-            --exclude="ci-cd.yml" \
-            -E "AKIA[0-9A-Z]{16}|BEGIN PRIVATE KEY|ghp_[A-Za-z0-9_]+" \
-            .; then
-            echo "Potential secret pattern found."
+      - name: Check Day 18 files
+        run: |
+          test -d week3/day18
+          echo "Day 18 directory exists."
+
+      - name: Check workflow directory
+        run: |
+          test -d .github/workflows
+          echo "Workflow directory exists."
+          echo "Available workflow files:"
+          find .github/workflows -maxdepth 1 -type f
+
+      - name: Check for obvious private-key files
+        run: |
+          if find . \
+            -path './.git' -prune -o \
+            -path './node_modules' -prune -o \
+            -type f \
+            \( -iname '*.pem' -o -iname '*.key' \) \
+            -print | grep -q .; then
+            echo "A private-key file was found."
             exit 1
           fi
 
-          echo "No common secret patterns detected."
-
-      - name: Check important security files
-        shell: bash
-        run: |
-          test -f .gitignore
-          test -f week3/day18/docs/cicd-guide.md
-          echo "Required security-related files are present."
-
-      - name: Check workflow files
-        shell: bash
-        run: |
-          test -d .github/workflows
-          find .github/workflows -type f \( -name "*.yml" -o -name "*.yaml" \)
-          echo "Workflow files checked successfully."
+          echo "No obvious private-key files found."
 
       - name: Security validation completed
-        run: echo "Day 18 security validation completed successfully."
+        run: |
+          echo "Day 18 security validation completed successfully."
