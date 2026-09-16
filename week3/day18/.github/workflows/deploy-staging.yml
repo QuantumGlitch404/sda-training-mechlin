@@ -1,0 +1,74 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  ENVIRONMENT: staging
+  NAMESPACE: sda-training
+
+jobs:
+  deploy:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v4
+
+      - name: Configure kubectl
+        run: |
+          if [ -z "${{ secrets.KUBE_CONFIG_STAGING }}" ]; then
+            echo "KUBE_CONFIG_STAGING is not configured."
+            exit 1
+          fi
+
+          echo "${{ secrets.KUBE_CONFIG_STAGING }}" | base64 -d > kubeconfig
+          echo "KUBECONFIG=$GITHUB_WORKSPACE/kubeconfig" >> "$GITHUB_ENV"
+
+      - name: Deploy namespace
+        run: |
+          kubectl apply -f week3/day17/k8s/namespace.yaml
+
+      - name: Deploy ConfigMap
+        run: |
+          kubectl apply -f week3/day17/k8s/configmap.yaml
+
+      - name: Deploy Secret
+        run: |
+          kubectl apply -f week3/day17/k8s/secret.yaml
+
+      - name: Deploy application
+        run: |
+          kubectl apply -f week3/day17/k8s/deployment.yaml
+
+      - name: Deploy service
+        run: |
+          kubectl apply -f week3/day17/k8s/service.yaml
+
+      - name: Deploy ingress
+        run: |
+          kubectl apply -f week3/day17/k8s/ingress.yaml
+
+      - name: Wait for deployment
+        run: |
+          kubectl rollout status \
+            deployment/sda-training-app \
+            -n ${{ env.NAMESPACE }} \
+            --timeout=180s
+
+      - name: Health check
+        run: |
+          kubectl get pods -n ${{ env.NAMESPACE }}
+          kubectl get services -n ${{ env.NAMESPACE }}
+          kubectl get ingress -n ${{ env.NAMESPACE }}

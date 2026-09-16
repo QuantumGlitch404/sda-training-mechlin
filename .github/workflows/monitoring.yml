@@ -1,0 +1,27 @@
+name: Monitoring Check
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "Public staging URL to check, for example https://example.com/health"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  health-check:
+    name: Check Staging URL
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check HTTP response
+        env:
+          TARGET_URL: ${{ inputs.target_url }}
+        run: |
+          echo "Checking: $TARGET_URL"
+          curl --fail --silent --show-error --location --max-time 20 "$TARGET_URL"
+          echo
+          echo "Monitoring check passed."

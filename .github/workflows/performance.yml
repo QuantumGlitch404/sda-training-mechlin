@@ -1,0 +1,42 @@
+name: Performance Checks
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  performance:
+    name: Run Available Performance Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: week3/day16/package-lock.json
+
+      - name: Install Day 16 dependencies
+        working-directory: week3/day16
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Run performance script when available
+        working-directory: week3/day16
+        run: |
+          if npm run | grep -q "performance"; then
+            npm run performance
+          else
+            echo "No performance script exists in week3/day16/package.json."
+            echo "The workflow completed safely without inventing a performance command."
+          fi
