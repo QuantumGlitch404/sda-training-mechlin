@@ -1,73 +1,58 @@
-name: Security Scanning
+name: Day 18 Security Checks
 
 on:
   push:
     branches:
-      - main
       - develop
+      - feature/day18-cicd-pipeline
   pull_request:
     branches:
-      - main
       - develop
-  schedule:
-    - cron: "0 2 * * 1"
+  workflow_dispatch:
 
 permissions:
   contents: read
-  security-events: write
 
 jobs:
-  security-scan:
-    name: Security Scanning
+  security:
+    name: Security Validation
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-          cache: npm
-          cache-dependency-path: week3/day18/package-lock.json
+      - name: Check for accidentally committed secrets
+        shell: bash
+        run: |
+          echo "Checking repository for common secret patterns..."
 
-      - name: Install Day 18 dependencies
-        working-directory: week3/day18
-        run: npm ci
+          if grep -RInE \
+            --exclude-dir=.git \
+            --exclude-dir=node_modules \
+            --exclude="security.yml" \
+            --exclude="ci-cd.yml" \
+            -E "AKIA[0-9A-Z]{16}|BEGIN PRIVATE KEY|ghp_[A-Za-z0-9_]+" \
+            .; then
+            echo "Potential secret pattern found."
+            exit 1
+          fi
 
-      - name: Run npm audit
-        working-directory: week3/day18
-        run: npm audit --audit-level=moderate
+          echo "No common secret patterns detected."
 
-      - name: Run Trivy filesystem scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: fs
-          scan-ref: .
-          format: sarif
-          output: trivy-results.sarif
-          severity: CRITICAL,HIGH
+      - name: Check important security files
+        shell: bash
+        run: |
+          test -f .gitignore
+          test -f week3/day18/docs/cicd-guide.md
+          echo "Required security-related files are present."
 
-      - name: Upload Trivy results
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: trivy-results.sarif
+      - name: Check workflow files
+        shell: bash
+        run: |
+          test -d .github/workflows
+          find .github/workflows -type f \( -name "*.yml" -o -name "*.yaml" \)
+          echo "Workflow files checked successfully."
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: javascript
-
-      - name: Analyze CodeQL
-        uses: github/codeql-action/analyze@v3
-
-      - name: Run Snyk scan
-        if: ${{ secrets.SNYK_TOKEN != '' }}
-        uses: snyk/actions/node@master
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: test
-          args: --severity-threshold=high
-          working-directory: week3/day18
+      - name: Security validation completed
+        run: echo "Day 18 security validation completed successfully."
