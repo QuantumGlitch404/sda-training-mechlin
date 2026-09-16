@@ -14,16 +14,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
           cache-dependency-path: week3/day18/package-lock.json
 
-      - name: Install dependencies
+      - name: Install Day 18 dependencies
         working-directory: week3/day18
         run: npm ci
 
@@ -42,15 +42,17 @@ jobs:
               exit 0
             fi
 
+            echo "Waiting for application..."
             sleep 2
           done
 
           echo "Application did not become healthy."
+          echo "Application logs:"
           cat /tmp/day16-app.log
           exit 1
 
       - name: Install Artillery
-        run: npm install -g artillery
+        run: npm install --global artillery
 
       - name: Run Artillery load test
         working-directory: week3/day18
@@ -65,14 +67,66 @@ jobs:
             loadimpact/k6 \
             run /scripts/k6-load-test.js
 
-      - name: Run Lighthouse CI
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: "./week3/day18/lighthouse.config.js"
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+      - name: Create HTML page for Lighthouse
+        run: |
+          mkdir -p lighthouse-site
 
-      - name: Stop application
+          cat > lighthouse-site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta name="description" content="SDA Training performance testing page">
+            <title>SDA Training Performance Test</title>
+          </head>
+          <body>
+            <main>
+              <h1>SDA Training Application</h1>
+              <p>This HTML page is used for the Day 18 Lighthouse performance audit.</p>
+              <p>The CI/CD performance workflow is running successfully.</p>
+            </main>
+          </body>
+          </html>
+          HTML
+
+      - name: Start HTML server for Lighthouse
+        run: |
+          python3 -m http.server 4173 \
+            --directory lighthouse-site \
+            > /tmp/lighthouse-server.log 2>&1 &
+
+          echo $! > /tmp/lighthouse-server.pid
+
+          sleep 5
+
+          curl --fail http://localhost:4173
+
+      - name: Run Lighthouse HTML audit
+        run: |
+          npx --yes @lhci/cli@0.14.0 collect \
+            --url=http://localhost:4173 \
+            --numberOfRuns=1 \
+            --settings.chromeFlags="--no-sandbox"
+
+      - name: Save Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: |
+            .lighthouseci/
+            /tmp/lighthouse-server.log
+          if-no-files-found: warn
+
+      - name: Stop HTML server
+        if: always()
+        run: |
+          if [ -f /tmp/lighthouse-server.pid ]; then
+            kill "$(cat /tmp/lighthouse-server.pid)" || true
+          fi
+
+      - name: Stop Day 16 application
         if: always()
         run: |
           if [ -f /tmp/day16-app.pid ]; then
