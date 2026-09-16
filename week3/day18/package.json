@@ -1,0 +1,15 @@
+{
+  "name": "sda-training-day18",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Day 18 CI/CD Pipeline validation for Mechlin SDA Training",
+  "scripts": {
+    "test": "node tests/validate.js",
+    "test:unit": "node tests/validate.js",
+    "test:integration": "node tests/validate.js",
+    "lint": "node --check tests/validate.js",
+    "type-check": "node --check tests/validate.js",
+    "security": "npm audit --audit-level=moderate",
+    "health": "bash scripts/health-check.sh"
+  }
+}

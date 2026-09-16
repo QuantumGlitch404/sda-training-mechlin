@@ -1,0 +1,59 @@
+name: Day 18 Security Checks
+
+on:
+  push:
+    branches:
+      - develop
+      - feature/day18-cicd-pipeline
+  pull_request:
+    branches:
+      - develop
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    name: Security Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check repository integrity
+        run: |
+          echo "Checking repository integrity..."
+          git diff --check
+          echo "Repository integrity check passed."
+
+      - name: Check Day 18 files
+        run: |
+          test -d week3/day18
+          echo "Day 18 directory exists."
+
+      - name: Check workflow directory
+        run: |
+          test -d .github/workflows
+          echo "Workflow directory exists."
+          echo "Available workflow files:"
+          find .github/workflows -maxdepth 1 -type f
+
+      - name: Check for obvious private-key files
+        run: |
+          if find . \
+            -path './.git' -prune -o \
+            -path './node_modules' -prune -o \
+            -type f \
+            \( -iname '*.pem' -o -iname '*.key' \) \
+            -print | grep -q .; then
+            echo "A private-key file was found."
+            exit 1
+          fi
+
+          echo "No obvious private-key files found."
+
+      - name: Security validation completed
+        run: |
+          echo "Day 18 security validation completed successfully."

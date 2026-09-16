@@ -1,0 +1,40 @@
+name: Day 18 CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - develop
+      - feature/day18-cicd-pipeline
+  pull_request:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test and Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check repository files
+        run: |
+          echo "Day 18 CI/CD workflow started"
+          echo "Repository files:"
+          ls -la
+
+      - name: Validate Day 18 files
+        run: |
+          test -d week3/day18
+          test -f week3/day18/docs/cicd-guide.md
+          echo "Day 18 files found successfully"
+
+      - name: Test completed
+        run: echo "Day 18 test job completed successfully"
