@@ -594,3 +594,40 @@ This repository contains my 4-week Mechlin Tech training work.
 - Kubernetes Service Networking
 - Kubernetes Application Deployment
 - Kubernetes Testing
+
+### Day 18 - CI/CD Pipeline
+
+- CI/CD Fundamentals
+- Continuous Integration
+- Continuous Deployment
+- GitHub Actions
+- GitHub Actions Workflows
+- GitHub Actions Jobs
+- GitHub Actions Steps
+- GitHub Actions Secrets
+- GitHub Actions Artifacts
+- Automated Testing
+- Unit Testing
+- Integration Testing
+- Code Quality Checks
+- npm Audit
+- Trivy Security Scanning
+- CodeQL Analysis
+- Snyk Security Scanning
+- Docker Image Build
+- GitHub Container Registry
+- Kubernetes Deployment
+- Staging Deployment
+- Production Deployment
+- Environment Promotion
+- Deployment Rollback
+- Kubernetes Rollout
+- Performance Testing
+- Lighthouse CI
+- Artillery Load Testing
+- K6 Load Testing
+- Monitoring
+- Kubernetes Health Checks
+- Application Logs
+- Resource Monitoring
+- CI/CD Documentation

@@ -1,0 +1,50 @@
+name: Deploy to Staging
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Optional image tag for the deployment record"
+        required: false
+        default: "latest"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy Kubernetes Manifests to Staging
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v4
+        with:
+          version: latest
+
+      - name: Validate Day 18 files and Kubernetes manifest folder
+        run: node week3/day18/tests/validate.js
+
+      - name: Deploy when KUBE_CONFIG_BASE64 is configured
+        env:
+          KUBE_CONFIG_BASE64: ${{ secrets.KUBE_CONFIG_BASE64 }}
+          IMAGE_TAG: ${{ inputs.image_tag }}
+        run: |
+          if [ -z "$KUBE_CONFIG_BASE64" ]; then
+            echo "KUBE_CONFIG_BASE64 is not configured."
+            echo "No deployment was made. Add this repository secret before using staging deployment."
+            exit 0
+          fi
+
+          export KUBECONFIG="$RUNNER_TEMP/kubeconfig"
+          echo "$KUBE_CONFIG_BASE64" | base64 --decode > "$KUBECONFIG"
+
+          echo "Deploying the committed Kubernetes manifests."
+          echo "Requested image tag: $IMAGE_TAG"
+          kubectl config current-context
+          kubectl apply -f week3/day17/k8s
