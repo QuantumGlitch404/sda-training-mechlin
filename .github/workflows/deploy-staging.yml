@@ -16,6 +16,7 @@ env:
 jobs:
   deploy:
     name: Deploy to Staging
+    if: ${{ vars.ENABLE_STAGING_DEPLOYMENT == 'true' }}
     runs-on: ubuntu-latest
     environment: staging
 
@@ -25,50 +26,77 @@ jobs:
 
       - name: Setup kubectl
         uses: azure/setup-kubectl@v4
+        with:
+          version: latest
 
       - name: Configure kubectl
+        env:
+          KUBE_CONFIG_STAGING: ${{ secrets.KUBE_CONFIG_STAGING }}
         run: |
-          if [ -z "${{ secrets.KUBE_CONFIG_STAGING }}" ]; then
-            echo "KUBE_CONFIG_STAGING is not configured."
+          if [ -z "$KUBE_CONFIG_STAGING" ]; then
+            echo "::error::KUBE_CONFIG_STAGING secret is not configured."
             exit 1
           fi
 
-          echo "${{ secrets.KUBE_CONFIG_STAGING }}" | base64 -d > kubeconfig
+          printf '%s' "$KUBE_CONFIG_STAGING" | base64 --decode > "$GITHUB_WORKSPACE/kubeconfig"
+
+          chmod 600 "$GITHUB_WORKSPACE/kubeconfig"
+
           echo "KUBECONFIG=$GITHUB_WORKSPACE/kubeconfig" >> "$GITHUB_ENV"
+
+          echo "Kubernetes configuration completed successfully."
+
+      - name: Verify Kubernetes connection
+        run: |
+          kubectl cluster-info
 
       - name: Deploy namespace
         run: |
-          kubectl apply -f week3/day17/k8s/namespace.yaml
+          kubectl apply \
+            -f week3/day17/k8s/namespace.yaml
 
       - name: Deploy ConfigMap
         run: |
-          kubectl apply -f week3/day17/k8s/configmap.yaml
+          kubectl apply \
+            -f week3/day17/k8s/configmap.yaml
 
       - name: Deploy Secret
         run: |
-          kubectl apply -f week3/day17/k8s/secret.yaml
+          kubectl apply \
+            -f week3/day17/k8s/secret.yaml
 
       - name: Deploy application
         run: |
-          kubectl apply -f week3/day17/k8s/deployment.yaml
+          kubectl apply \
+            -f week3/day17/k8s/deployment.yaml
 
       - name: Deploy service
         run: |
-          kubectl apply -f week3/day17/k8s/service.yaml
+          kubectl apply \
+            -f week3/day17/k8s/service.yaml
 
       - name: Deploy ingress
         run: |
-          kubectl apply -f week3/day17/k8s/ingress.yaml
+          kubectl apply \
+            -f week3/day17/k8s/ingress.yaml
 
       - name: Wait for deployment
         run: |
           kubectl rollout status \
             deployment/sda-training-app \
-            -n ${{ env.NAMESPACE }} \
+            --namespace "$NAMESPACE" \
             --timeout=180s
 
       - name: Health check
         run: |
-          kubectl get pods -n ${{ env.NAMESPACE }}
-          kubectl get services -n ${{ env.NAMESPACE }}
-          kubectl get ingress -n ${{ env.NAMESPACE }}
+          echo "Pods:"
+          kubectl get pods \
+            --namespace "$NAMESPACE"
+
+          echo "Services:"
+          kubectl get services \
+            --namespace "$NAMESPACE"
+
+          echo "Ingress:"
+          kubectl get ingress \
+            --namespace "$NAMESPACE"
