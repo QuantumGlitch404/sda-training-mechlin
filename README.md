@@ -632,25 +632,27 @@ This repository contains my 4-week Mechlin Tech training work.
 - Resource Monitoring
 - CI/CD Documentation
 
-## Day 20: Flutter Development
+### Day 19 - React Native
 
-Day 20 introduces Flutter and Dart for cross-platform mobile application
-development.
-
-### Topics Covered
-
-- Flutter project creation
-- Dart and Flutter widgets
-- Material 3 UI
-- Login and dashboard screens
-- Bottom navigation
-- Analytics, profile, and settings screens
-- State management preparation
-- API integration preparation
-- Offline functionality preparation
-- Flutter testing and static analysis
-
-### Project Location
-
-```text
-week3/day20/sda_training_app
+- React Native Fundamentals
+- TypeScript Mobile Development
+- React Native Components
+- React Navigation
+- Native Stack Navigation
+- Bottom Tab Navigation
+- Redux Toolkit
+- Authentication State Management
+- AsyncStorage
+- API Service
+- Backend API Integration
+- Offline Support
+- Offline Request Queue
+- Network Status Detection
+- Offline Synchronization
+- Responsive Mobile UI
+- Mobile Performance Practices
+- Mobile Security Practices
+- React Native Testing
+- Android Application Testing
+- Cross-Platform Mobile Development
+- React Native Documentation
