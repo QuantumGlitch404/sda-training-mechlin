@@ -631,3 +631,26 @@ This repository contains my 4-week Mechlin Tech training work.
 - Application Logs
 - Resource Monitoring
 - CI/CD Documentation
+
+## Day 20: Flutter Development
+
+Day 20 introduces Flutter and Dart for cross-platform mobile application
+development.
+
+### Topics Covered
+
+- Flutter project creation
+- Dart and Flutter widgets
+- Material 3 UI
+- Login and dashboard screens
+- Bottom navigation
+- Analytics, profile, and settings screens
+- State management preparation
+- API integration preparation
+- Offline functionality preparation
+- Flutter testing and static analysis
+
+### Project Location
+
+```text
+week3/day20/sda_training_app
