@@ -679,3 +679,105 @@ development.
 
 ```text
 week3/day20/sda_training_app
+
+# Day 21: API Integration
+
+## Overview
+
+This project demonstrates API integration concepts in React Native.
+
+## Features
+
+- Axios API client
+- Authentication token handling
+- REST API methods
+- Offline data caching
+- Offline request queue
+- Network status monitoring
+- WebSocket real-time service
+- Push notification service
+- Reusable `useApi` React hook
+- API integration documentation
+
+## Project Structure
+
+```text
+src/
+├── hooks/
+│   └── useApi.ts
+├── services/
+│   ├── apiClient.ts
+│   ├── realtimeService.ts
+│   ├── offlineService.ts
+│   └── notificationService.ts
+└── types/
+    └── index.ts
+```
+
+## Installation
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+## Running the Application
+
+Start Metro:
+
+```bash
+npx react-native start
+```
+
+Run the Android application in another terminal:
+
+```bash
+npx react-native run-android
+```
+
+## API Configuration
+
+The example API URL is:
+
+```text
+http://10.0.2.2:3000/api/v1
+```
+
+This address is suitable for an Android emulator when the backend
+runs on the development computer.
+
+Change the address when using a physical device or another server.
+
+## Testing
+
+Run TypeScript validation:
+
+```bash
+npx tsc --noEmit
+```
+
+Run the project tests:
+
+```bash
+npm test
+```
+
+## Important Notes
+
+The API, WebSocket, and push notification services require
+additional backend or native configuration for complete real-world
+testing.
+
+## Learning Outcomes
+
+After completing Day 21, the learner understands:
+
+- REST API communication
+- Authentication headers
+- Offline-first application patterns
+- Local caching
+- WebSocket communication
+- Push notification structure
+- Reusable API hooks
+- API error handling
