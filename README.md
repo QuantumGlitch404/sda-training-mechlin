@@ -772,7 +772,7 @@ testing.
 
 ## Learning Outcomes
 
-After completing Day 21, the learner understands:
+After completing Day 21, I understands:
 
 * REST API communication
 * Authentication headers
