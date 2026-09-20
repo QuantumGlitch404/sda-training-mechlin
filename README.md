@@ -787,20 +787,20 @@ After completing Day 21, I understands:
 
 ### Completed Topics
 
-- AI/ML fundamentals
-- Data pipeline creation
-- Data cleaning and feature scaling
-- Machine-learning model factory
-- Random Forest model training
-- Model evaluation
-- Model saving and loading
-- Flask AI prediction API
-- Web AI integration
-- Mobile AI integration
-- Offline prediction caching
-- AI ethics and responsible AI practices
-- AI/ML documentation
-- Automated tests
+* AI/ML fundamentals
+* Data pipeline creation
+* Data cleaning and feature scaling
+* Machine-learning model factory
+* Random Forest model training
+* Model evaluation
+* Model saving and loading
+* Flask AI prediction API
+* Web AI integration
+* Mobile AI integration
+* Offline prediction caching
+* AI ethics and responsible AI practices
+* AI/ML documentation
+* Automated tests
 
 ### Project Location
 
@@ -810,8 +810,77 @@ week4/day22
 
 ### Validation
 
-- Model training completed
-- Prediction API tested
-- Python files compiled successfully
-- Automated tests passed
-- Documentation added
+* Model training completed
+* Prediction API tested
+* Python files compiled successfully
+* Automated tests passed
+* Documentation added
+
+## Week 4 - Day 23: Generative AI and LLM
+
+### Completed Topics
+
+* Generative AI fundamentals
+* Large Language Models (LLMs)
+* Prompt engineering
+* AI model integration
+* Ollama integration
+* Local LLM execution
+* Text generation API
+* Chat completion API
+* AI model listing
+* Health-check API
+* Request validation
+* Error handling
+* Safe handling of unavailable AI models
+* Generative AI documentation
+* Automated API testing
+
+### Project Location
+
+```text
+week4/day23
+```
+
+### API Features
+
+* Health-check endpoint
+* Text generation endpoint
+* Chat completion endpoint
+* Ollama model listing endpoint
+* Prompt validation
+* Message validation
+* Local LLM support
+
+### Validation
+
+* Required files verified
+* Health endpoint tested
+* Text endpoint validation tested
+* Chat endpoint validation tested
+* Ollama model listing tested when unavailable
+* Automated tests passed successfully
+
+### Testing
+
+Run the Day 23 tests from the Day 23 directory:
+
+```bash
+py -m pytest tests -v
+```
+
+### Learning Outcomes
+
+After completing Day 23, I understands:
+
+* Generative AI concepts
+* Large Language Models
+* Prompt engineering
+* Text generation
+* Chat-based AI interactions
+* Ollama integration
+* Local AI model execution
+* AI API development
+* Input validation
+* AI error handling
+* AI model availability checks
