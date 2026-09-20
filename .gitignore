@@ -2,3 +2,6 @@
 # Dependencies
 node_modules/
 **/node_modules/
+
+# Day 23 environment files
+week4/day23/.env
