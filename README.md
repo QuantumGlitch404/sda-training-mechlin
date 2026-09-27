@@ -787,7 +787,7 @@ After completing Day 21, I understands:
 
 ### Completed Topics
 
-* AI/ML fundamentals
+[L] * AI/ML fundamentals
 * Data pipeline creation
 * Data cleaning and feature scaling
 * Machine-learning model factory
@@ -911,8 +911,7 @@ After completing Day 24, I understand:
 - Input validation
 - Safe tool execution
 - Error handling
-week4/day23
-```
+- week4/day23
 
 ### API Features
 
@@ -956,3 +955,649 @@ After completing Day 23, I understands:
 * Input validation
 * AI error handling
 * AI model availability checks
+
+## Week 4 - Day 25: AI Web Integration
+
+### Overview
+
+Day 25 focuses on integrating AI capabilities into web applications.
+
+The implementation uses a Flask backend with Google Gemini and provides AI-powered web features.
+
+### Completed Topics
+
+* AI integration in web applications
+* AI chatbot
+* Conversation history
+* Context-aware AI interactions
+* AI content generation
+* AI recommendations
+* Recommendation feedback
+* User profile support
+* Flask AI web service
+* Google Gemini integration
+* AI health-check endpoint
+* Frontend AI web components
+* AI API integration
+* Environment variable configuration
+* AI security practices
+* AI web integration documentation
+* Automated API testing
+
+### Technologies Used
+
+* Python
+* Flask
+* Flask-CORS
+* Google Gemini
+* Google GenAI SDK
+* HTML
+* JavaScript
+* REST API
+* JSON
+* Environment Variables
+
+### Project Location
+
+```text
+week4/day25
+```
+
+### Project Structure
+
+```text
+week4/day25/
+├── README.md
+├── index.html
+├── requirements.txt
+├── .env.example
+├── .gitignore
+├── ai/
+│   ├── __init__.py
+│   ├── openai_integration.py
+│   ├── web_ai_service.py
+│   └── web-components/
+│       ├── ai-chatbot.js
+│       ├── ai-content-generator.js
+│       └── ai-recommendations.js
+├── docs/
+│   └── ai-web-integration-guide.md
+└── screenshots/
+```
+
+### AI Chatbot
+
+The AI chatbot provides:
+
+* User messages
+* AI responses
+* Conversation history
+* Context support
+* Loading state
+* Typing indicator
+* Backend API integration
+
+### Chat API
+
+```text
+POST /api/ai/chat
+```
+
+### AI Content Generation
+
+The content generation feature supports:
+
+* Article generation
+* Topic-based generation
+* Tone selection
+* Length selection
+* Keyword-based generation
+
+### Content Generation API
+
+```text
+POST /api/ai/generate
+```
+
+### AI Recommendations
+
+The recommendation feature supports:
+
+* User profiles
+* Personalized recommendations
+* Recommendation categories
+* Recommendation scores
+* Recommendation feedback
+* User interests
+
+### Recommendation APIs
+
+```text
+GET /api/ai/recommendations/profile
+POST /api/ai/recommendations
+POST /api/ai/recommendations/feedback
+```
+
+### Health Check
+
+The AI service provides a health endpoint:
+
+```text
+GET /api/ai/health
+```
+
+The endpoint verifies that the service is running and that the Gemini service is available.
+
+### Validation
+
+* Gemini health endpoint tested
+* AI chatbot API tested
+* AI content generation tested
+* AI recommendations tested
+* Recommendation feedback tested
+* Frontend AI chatbot tested
+* Python syntax verified
+* Documentation completed
+
+### Security
+
+* Gemini API key stored locally in `.env`
+* `.env` excluded from Git
+* API key not included in frontend code
+* API key not committed to the repository
+* Backend handles Gemini authentication
+
+### Documentation
+
+Detailed documentation is available at:
+
+```text
+week4/day25/docs/ai-web-integration-guide.md
+```
+
+### Screenshots
+
+Day 25 testing screenshots are stored in:
+
+```text
+week4/day25/screenshots/
+```
+
+### Learning Outcomes
+
+After completing Day 25, I understand:
+
+* AI integration in web applications
+* AI chatbot development
+* Conversation history
+* AI content generation
+* AI recommendation systems
+* Flask AI backend development
+* Gemini API integration
+* REST API integration
+* AI health monitoring
+* AI security practices
+* Environment variable configuration
+* Frontend AI integration
+
+## Week 4 - Day 26: AI Mobile Integration
+
+### Overview
+
+Day 26 focuses on integrating AI capabilities into mobile applications.
+
+The implementation provides React Native and Flutter AI components connected to a Flask backend using Google Gemini.
+
+### Completed Topics
+
+* Mobile AI integration
+* React Native AI chatbot
+* Flutter AI chatbot
+* Mobile AI content generation
+* Mobile AI recommendations
+* Recommendation feedback
+* User profile support
+* Flask mobile AI backend
+* Google Gemini integration
+* AI health-check endpoint
+* Conversation history
+* Local mobile data storage
+* AsyncStorage
+* SharedPreferences
+* Mobile AI API integration
+* Mobile AI performance practices
+* Mobile AI battery usage practices
+* Mobile AI security practices
+* Offline storage concepts
+* Mobile AI documentation
+* Automated API testing
+
+### Technologies Used
+
+* React Native
+* TypeScript
+* Flutter
+* Dart
+* Python
+* Flask
+* Flask-CORS
+* Google Gemini
+* Google GenAI SDK
+* AsyncStorage
+* SharedPreferences
+* REST API
+* JSON
+* Environment Variables
+
+### Project Location
+
+```text
+week4/day26
+```
+
+### Project Structure
+
+```text
+week4/day26/
+├── README.md
+├── .env
+├── .env.example
+├── .gitignore
+├── requirements.txt
+├── run_mobile_service.py
+├── ai/
+│   ├── __init__.py
+│   ├── mobile_ai_service.py
+│   └── mobile-components/
+│       ├── ReactNativeAIChatbot.tsx
+│       ├── flutter_ai_chatbot.dart
+│       ├── MobileAIContentGenerator.tsx
+│       └── MobileAIRecommendations.tsx
+├── docs/
+│   └── ai-mobile-integration-guide.md
+└── screenshots/
+```
+
+> The real `.env` file contains local configuration and must not be committed to Git.
+
+### React Native AI Chatbot
+
+The React Native chatbot provides:
+
+* Chat messages
+* User and assistant message display
+* Conversation history
+* Local message storage
+* Loading state
+* Typing indicator
+* Message limit
+* Clear chat option
+* Backend API integration
+
+React Native uses:
+
+```text
+AsyncStorage
+```
+
+for local message storage.
+
+### Chat API
+
+```text
+POST /chat
+```
+
+### Flutter AI Chatbot
+
+The Flutter chatbot provides:
+
+* Chat interface
+* Message history
+* Local storage
+* Typing indicator
+* Loading state
+* Clear chat option
+* HTTP API integration
+
+Flutter uses:
+
+```text
+SharedPreferences
+```
+
+for local message storage.
+
+### Chat API
+
+```text
+POST /chat
+```
+
+### Mobile AI Content Generator
+
+The content generator supports:
+
+* Article generation
+* Blog post generation
+* Social media content
+* Email content
+* Product descriptions
+* Topic input
+* Tone selection
+* Length selection
+* Keywords
+
+### Content Generation API
+
+```text
+POST /generate
+```
+
+### Mobile AI Recommendations
+
+The recommendation component supports:
+
+* Personalized recommendations
+* User profile data
+* Recommendation refresh
+* Recommendation scores
+* Categories
+* View actions
+* Bookmark actions
+* User feedback
+
+### Recommendation APIs
+
+```text
+GET /profile
+POST /recommendations
+POST /recommendations/feedback
+```
+
+### Mobile AI Backend
+
+The Flask mobile AI service provides:
+
+* Chat API
+* Content generation API
+* Recommendation API
+* Recommendation feedback API
+* User profile API
+* Health check API
+
+### Backend File
+
+```text
+ai/mobile_ai_service.py
+```
+
+### Service Runner
+
+```text
+run_mobile_service.py
+```
+
+The mobile AI service runs on:
+
+```text
+http://127.0.0.1:5001
+```
+
+### API Endpoints
+
+#### Health
+
+```text
+GET /health
+```
+
+Checks whether the mobile AI service is running and whether Gemini is available.
+
+#### Chat
+
+```text
+POST /chat
+```
+
+Used by the React Native and Flutter AI chatbots.
+
+#### Content Generation
+
+```text
+POST /generate
+```
+
+Used for AI-powered mobile content generation.
+
+#### User Profile
+
+```text
+GET /profile
+```
+
+Returns the mobile AI user profile.
+
+#### Recommendations
+
+```text
+POST /recommendations
+```
+
+Generates personalized recommendations.
+
+#### Recommendation Feedback
+
+```text
+POST /recommendations/feedback
+```
+
+Receives recommendation feedback.
+
+### Mobile AI Architecture
+
+```text
+Mobile Application
+       |
+       | HTTP / JSON
+       v
+Flask Mobile AI Service
+       |
+       | Gemini API
+       v
+Google Gemini
+       |
+       v
+AI Response
+       |
+       v
+Flask Backend
+       |
+       v
+Mobile Application
+```
+
+### Local Mobile Storage
+
+React Native uses:
+
+```text
+AsyncStorage
+```
+
+Flutter uses:
+
+```text
+SharedPreferences
+```
+
+Local storage can be used for:
+
+* Chat messages
+* User preferences
+* Generated content
+* Local application data
+
+### Performance
+
+Mobile AI applications should:
+
+* Avoid unnecessary API calls
+* Limit message history
+* Store useful local data
+* Avoid unnecessarily large responses
+* Use loading states
+* Keep the interface responsive
+* Reduce unnecessary network traffic
+* Avoid repeated background requests
+
+### Battery Usage
+
+Mobile AI applications should:
+
+* Avoid unnecessary AI requests
+* Avoid repeated background requests
+* Cache useful data
+* Use user-triggered AI actions
+* Keep mobile processing lightweight
+* Avoid unnecessary polling
+
+### Security
+
+* Gemini API key stored locally in `.env`
+* `.env` excluded from Git
+* API key not placed inside mobile frontend code
+* Backend handles Gemini authentication
+* API input should be validated
+* HTTPS should be used in production
+* User data should be protected
+
+### Environment Variables
+
+Example configuration:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_MODEL=gemini-3-flash-preview
+```
+
+The real API key must remain inside the local `.env` file.
+
+The `.env.example` file contains only placeholder values.
+
+### Validation
+
+* Mobile AI service started successfully
+* Gemini health check tested
+* AI chatbot tested
+* AI content generation tested
+* User profile tested
+* AI recommendations tested
+* Recommendation feedback tested
+* Python syntax verified
+* React Native component created
+* Flutter component created
+* Mobile content generator created
+* Mobile recommendation component created
+* Documentation completed
+* Screenshots captured
+
+### Testing
+
+Python syntax validation:
+
+```bash
+python -m py_compile ai/mobile_ai_service.py run_mobile_service.py
+```
+
+Health test:
+
+```bash
+curl http://127.0.0.1:5001/health
+```
+
+Chat test:
+
+```bash
+curl -X POST http://127.0.0.1:5001/chat -H "Content-Type: application/json" -d "{\"message\":\"Explain mobile AI in one simple sentence.\",\"conversation_history\":[]}"
+```
+
+Content generation test:
+
+```bash
+curl -X POST http://127.0.0.1:5001/generate -H "Content-Type: application/json" -d "{\"content_type\":\"article\",\"topic\":\"AI in Mobile Applications\",\"tone\":\"professional\",\"length\":\"short\",\"keywords\":[\"AI\",\"mobile\",\"React Native\"]}"
+```
+
+Profile test:
+
+```bash
+curl http://127.0.0.1:5001/profile
+```
+
+Recommendations test:
+
+```bash
+curl -X POST http://127.0.0.1:5001/recommendations -H "Content-Type: application/json" -d "{\"user_profile\":{\"interests\":[\"AI\",\"mobile development\"]},\"max_recommendations\":5}"
+```
+
+Feedback test:
+
+```bash
+curl -X POST http://127.0.0.1:5001/recommendations/feedback -H "Content-Type: application/json" -d "{\"rating\":5,\"recommendations\":[],\"user_profile\":{\"interests\":[\"AI\",\"mobile development\"]}}"
+```
+
+### Documentation
+
+Detailed documentation is available at:
+
+```text
+week4/day26/docs/ai-mobile-integration-guide.md
+```
+
+### Screenshots
+
+Day 26 evidence screenshots are stored in:
+
+```text
+week4/day26/screenshots/
+```
+
+Expected screenshots include:
+
+```text
+day26-01-mobile-ai-service.png
+day26-02-health.png
+day26-03-mobile-chatbot.png
+day26-04-mobile-content-generator.png
+day26-05-mobile-recommendations.png
+day26-06-mobile-components.png
+day26-07-complete-structure.png
+```
+
+### Learning Outcomes
+
+After completing Day 26, I understand:
+
+* Mobile AI integration
+* React Native AI integration
+* Flutter AI integration
+* AI chatbot development
+* Conversation history
+* Local mobile storage
+* AsyncStorage
+* SharedPreferences
+* AI content generation
+* AI recommendation systems
+* Recommendation feedback
+* Flask mobile AI backend development
+* Gemini API integration
+* Mobile REST API integration
+* Mobile AI security
+* Mobile AI performance practices
+* Battery usage considerations
+* Offline storage concepts
+* Mobile AI documentation
+
+### Day 26 Completion
+
+Day 26 AI Mobile Integration has been completed and tested.
