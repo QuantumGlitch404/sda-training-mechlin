@@ -659,8 +659,7 @@ This repository contains my 4-week Mechlin Tech training work.
 
 ## Day 20: Flutter Development
 
-Day 20 introduces Flutter and Dart for cross-platform mobile application
-development.
+Day 20 introduces Flutter and Dart for cross-platform mobile application development.
 
 ### Topics Covered
 
@@ -717,21 +716,15 @@ src/
 
 ## Installation
 
-Install the project dependencies:
-
 ```bash
 npm install
 ```
 
 ## Running the Application
 
-Start Metro:
-
 ```bash
 npx react-native start
 ```
-
-Run the Android application in another terminal:
 
 ```bash
 npx react-native run-android
@@ -739,40 +732,23 @@ npx react-native run-android
 
 ## API Configuration
 
-The example API URL is:
-
 ```text
 http://10.0.2.2:3000/api/v1
 ```
 
-This address is suitable for an Android emulator when the backend
-runs on the development computer.
-
-Change the address when using a physical device or another server.
-
 ## Testing
-
-Run TypeScript validation:
 
 ```bash
 npx tsc --noEmit
 ```
 
-Run the project tests:
-
 ```bash
 npm test
 ```
 
-## Important Notes
-
-The API, WebSocket, and push notification services require
-additional backend or native configuration for complete real-world
-testing.
-
 ## Learning Outcomes
 
-After completing Day 21, I understands:
+After completing Day 21, I understand:
 
 * REST API communication
 * Authentication headers
@@ -783,11 +759,15 @@ After completing Day 21, I understands:
 * Reusable API hooks
 * API error handling
 
-## Week 4 - Day 22: AI/ML Fundamentals
+---
+
+# Week 4 — AI Development
+
+## Day 22 — AI/ML Fundamentals
 
 ### Completed Topics
 
-[L] * AI/ML fundamentals
+* AI/ML fundamentals
 * Data pipeline creation
 * Data cleaning and feature scaling
 * Machine-learning model factory
@@ -816,30 +796,7 @@ week4/day22
 - Automated tests passed
 - Documentation added
 
-## Week 4 - Day 24: AI Agents
-
-### Completed Topics
-
-- AI-agent architecture
-- Agent tools and capabilities
-- Conversation memory
-- Multi-turn conversations
-- Tool selection
-- Safe tool execution
-- Flask AI-agent API
-- Web AI-agent integration
-- Mobile AI-agent integration
-- API validation
-- Error handling
-- AI-agent documentation
-- Automated testing
-* Model training completed
-* Prediction API tested
-* Python files compiled successfully
-* Automated tests passed
-* Documentation added
-
-## Week 4 - Day 23: Generative AI and LLM
+## Day 23 — Generative AI and LLM
 
 ### Completed Topics
 
@@ -862,56 +819,8 @@ week4/day22
 ### Project Location
 
 ```text
-week4/day24
+week4/day23
 ```
-
-### Project Components
-
-- Tool-based AI agent
-- Conversation agent
-- Flask AI-agent API
-- Web integration class
-- Mobile integration class
-- AI-agent documentation
-- Automated tests
-
-### API Endpoints
-
-- `GET /health`
-- `POST /chat`
-- `GET /memory`
-- `POST /memory/clear`
-- `GET /tools`
-
-### Validation
-
-- Python files compiled successfully
-- Agent chat tested
-- Calculator tool tested
-- Conversation memory tested
-- Memory clearing tested
-- API health endpoint tested
-- Chat endpoint tested
-- Tools endpoint tested
-- Invalid input tested
-- Invalid agent type tested
-- Automated tests passed
-
-### Learning Outcomes
-
-After completing Day 24, I understand:
-
-- AI-agent architecture
-- Agent tools
-- Conversation memory
-- Multi-turn conversations
-- API integration
-- Web integration
-- Mobile integration
-- Input validation
-- Safe tool execution
-- Error handling
-- week4/day23
 
 ### API Features
 
@@ -932,31 +841,49 @@ After completing Day 24, I understand:
 * Ollama model listing tested when unavailable
 * Automated tests passed successfully
 
-### Testing
+## Day 24 — AI Agents
 
-Run the Day 23 tests from the Day 23 directory:
+### Completed Topics
 
-```bash
-py -m pytest tests -v
+* AI-agent architecture
+* Agent tools and capabilities
+* Conversation memory
+* Multi-turn conversations
+* Tool selection
+* Safe tool execution
+* Flask AI-agent API
+* Web AI-agent integration
+* Mobile AI-agent integration
+* API validation
+* Error handling
+* AI-agent documentation
+* Automated testing
+
+### API Endpoints
+
+```text
+GET /health
+POST /chat
+GET /memory
+POST /memory/clear
+GET /tools
 ```
 
-### Learning Outcomes
+### Validation
 
-After completing Day 23, I understands:
+* Python files compiled successfully
+* Agent chat tested
+* Calculator tool tested
+* Conversation memory tested
+* Memory clearing tested
+* API health endpoint tested
+* Chat endpoint tested
+* Tools endpoint tested
+* Invalid input tested
+* Invalid agent type tested
+* Automated tests passed
 
-* Generative AI concepts
-* Large Language Models
-* Prompt engineering
-* Text generation
-* Chat-based AI interactions
-* Ollama integration
-* Local AI model execution
-* AI API development
-* Input validation
-* AI error handling
-* AI model availability checks
-
-## Week 4 - Day 25: AI Web Integration
+## Day 25 — AI Web Integration
 
 ### Overview
 
@@ -1003,101 +930,16 @@ The implementation uses a Flask backend with Google Gemini and provides AI-power
 week4/day25
 ```
 
-### Project Structure
-
-```text
-week4/day25/
-├── README.md
-├── index.html
-├── requirements.txt
-├── .env.example
-├── .gitignore
-├── ai/
-│   ├── __init__.py
-│   ├── openai_integration.py
-│   ├── web_ai_service.py
-│   └── web-components/
-│       ├── ai-chatbot.js
-│       ├── ai-content-generator.js
-│       └── ai-recommendations.js
-├── docs/
-│   └── ai-web-integration-guide.md
-└── screenshots/
-```
-
-### AI Chatbot
-
-The AI chatbot provides:
-
-* User messages
-* AI responses
-* Conversation history
-* Context support
-* Loading state
-* Typing indicator
-* Backend API integration
-
-### Chat API
+### API Endpoints
 
 ```text
 POST /api/ai/chat
-```
-
-### AI Content Generation
-
-The content generation feature supports:
-
-* Article generation
-* Topic-based generation
-* Tone selection
-* Length selection
-* Keyword-based generation
-
-### Content Generation API
-
-```text
 POST /api/ai/generate
-```
-
-### AI Recommendations
-
-The recommendation feature supports:
-
-* User profiles
-* Personalized recommendations
-* Recommendation categories
-* Recommendation scores
-* Recommendation feedback
-* User interests
-
-### Recommendation APIs
-
-```text
 GET /api/ai/recommendations/profile
 POST /api/ai/recommendations
 POST /api/ai/recommendations/feedback
-```
-
-### Health Check
-
-The AI service provides a health endpoint:
-
-```text
 GET /api/ai/health
 ```
-
-The endpoint verifies that the service is running and that the Gemini service is available.
-
-### Validation
-
-* Gemini health endpoint tested
-* AI chatbot API tested
-* AI content generation tested
-* AI recommendations tested
-* Recommendation feedback tested
-* Frontend AI chatbot tested
-* Python syntax verified
-* Documentation completed
 
 ### Security
 
@@ -1109,38 +951,11 @@ The endpoint verifies that the service is running and that the Gemini service is
 
 ### Documentation
 
-Detailed documentation is available at:
-
 ```text
 week4/day25/docs/ai-web-integration-guide.md
 ```
 
-### Screenshots
-
-Day 25 testing screenshots are stored in:
-
-```text
-week4/day25/screenshots/
-```
-
-### Learning Outcomes
-
-After completing Day 25, I understand:
-
-* AI integration in web applications
-* AI chatbot development
-* Conversation history
-* AI content generation
-* AI recommendation systems
-* Flask AI backend development
-* Gemini API integration
-* REST API integration
-* AI health monitoring
-* AI security practices
-* Environment variable configuration
-* Frontend AI integration
-
-## Week 4 - Day 26: AI Mobile Integration
+## Day 26 — AI Mobile Integration
 
 ### Overview
 
@@ -1195,138 +1010,7 @@ The implementation provides React Native and Flutter AI components connected to 
 week4/day26
 ```
 
-### Project Structure
-
-```text
-week4/day26/
-├── README.md
-├── .env
-├── .env.example
-├── .gitignore
-├── requirements.txt
-├── run_mobile_service.py
-├── ai/
-│   ├── __init__.py
-│   ├── mobile_ai_service.py
-│   └── mobile-components/
-│       ├── ReactNativeAIChatbot.tsx
-│       ├── flutter_ai_chatbot.dart
-│       ├── MobileAIContentGenerator.tsx
-│       └── MobileAIRecommendations.tsx
-├── docs/
-│   └── ai-mobile-integration-guide.md
-└── screenshots/
-```
-
-> The real `.env` file contains local configuration and must not be committed to Git.
-
-### React Native AI Chatbot
-
-The React Native chatbot provides:
-
-* Chat messages
-* User and assistant message display
-* Conversation history
-* Local message storage
-* Loading state
-* Typing indicator
-* Message limit
-* Clear chat option
-* Backend API integration
-
-React Native uses:
-
-```text
-AsyncStorage
-```
-
-for local message storage.
-
-### Chat API
-
-```text
-POST /chat
-```
-
-### Flutter AI Chatbot
-
-The Flutter chatbot provides:
-
-* Chat interface
-* Message history
-* Local storage
-* Typing indicator
-* Loading state
-* Clear chat option
-* HTTP API integration
-
-Flutter uses:
-
-```text
-SharedPreferences
-```
-
-for local message storage.
-
-### Chat API
-
-```text
-POST /chat
-```
-
-### Mobile AI Content Generator
-
-The content generator supports:
-
-* Article generation
-* Blog post generation
-* Social media content
-* Email content
-* Product descriptions
-* Topic input
-* Tone selection
-* Length selection
-* Keywords
-
-### Content Generation API
-
-```text
-POST /generate
-```
-
-### Mobile AI Recommendations
-
-The recommendation component supports:
-
-* Personalized recommendations
-* User profile data
-* Recommendation refresh
-* Recommendation scores
-* Categories
-* View actions
-* Bookmark actions
-* User feedback
-
-### Recommendation APIs
-
-```text
-GET /profile
-POST /recommendations
-POST /recommendations/feedback
-```
-
 ### Mobile AI Backend
-
-The Flask mobile AI service provides:
-
-* Chat API
-* Content generation API
-* Recommendation API
-* Recommendation feedback API
-* User profile API
-* Health check API
-
-### Backend File
 
 ```text
 ai/mobile_ai_service.py
@@ -1338,129 +1022,30 @@ ai/mobile_ai_service.py
 run_mobile_service.py
 ```
 
-The mobile AI service runs on:
-
-```text
-http://127.0.0.1:5001
-```
-
 ### API Endpoints
-
-#### Health
 
 ```text
 GET /health
-```
-
-Checks whether the mobile AI service is running and whether Gemini is available.
-
-#### Chat
-
-```text
 POST /chat
-```
-
-Used by the React Native and Flutter AI chatbots.
-
-#### Content Generation
-
-```text
 POST /generate
-```
-
-Used for AI-powered mobile content generation.
-
-#### User Profile
-
-```text
 GET /profile
-```
-
-Returns the mobile AI user profile.
-
-#### Recommendations
-
-```text
 POST /recommendations
-```
-
-Generates personalized recommendations.
-
-#### Recommendation Feedback
-
-```text
 POST /recommendations/feedback
-```
-
-Receives recommendation feedback.
-
-### Mobile AI Architecture
-
-```text
-Mobile Application
-       |
-       | HTTP / JSON
-       v
-Flask Mobile AI Service
-       |
-       | Gemini API
-       v
-Google Gemini
-       |
-       v
-AI Response
-       |
-       v
-Flask Backend
-       |
-       v
-Mobile Application
 ```
 
 ### Local Mobile Storage
 
-React Native uses:
+React Native:
 
 ```text
 AsyncStorage
 ```
 
-Flutter uses:
+Flutter:
 
 ```text
 SharedPreferences
 ```
-
-Local storage can be used for:
-
-* Chat messages
-* User preferences
-* Generated content
-* Local application data
-
-### Performance
-
-Mobile AI applications should:
-
-* Avoid unnecessary API calls
-* Limit message history
-* Store useful local data
-* Avoid unnecessarily large responses
-* Use loading states
-* Keep the interface responsive
-* Reduce unnecessary network traffic
-* Avoid repeated background requests
-
-### Battery Usage
-
-Mobile AI applications should:
-
-* Avoid unnecessary AI requests
-* Avoid repeated background requests
-* Cache useful data
-* Use user-triggered AI actions
-* Keep mobile processing lightweight
-* Avoid unnecessary polling
 
 ### Security
 
@@ -1470,20 +1055,6 @@ Mobile AI applications should:
 * Backend handles Gemini authentication
 * API input should be validated
 * HTTPS should be used in production
-* User data should be protected
-
-### Environment Variables
-
-Example configuration:
-
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-GEMINI_MODEL=gemini-3-flash-preview
-```
-
-The real API key must remain inside the local `.env` file.
-
-The `.env.example` file contains only placeholder values.
 
 ### Validation
 
@@ -1497,107 +1068,722 @@ The `.env.example` file contains only placeholder values.
 * Python syntax verified
 * React Native component created
 * Flutter component created
-* Mobile content generator created
-* Mobile recommendation component created
 * Documentation completed
-* Screenshots captured
-
-### Testing
-
-Python syntax validation:
-
-```bash
-python -m py_compile ai/mobile_ai_service.py run_mobile_service.py
-```
-
-Health test:
-
-```bash
-curl http://127.0.0.1:5001/health
-```
-
-Chat test:
-
-```bash
-curl -X POST http://127.0.0.1:5001/chat -H "Content-Type: application/json" -d "{\"message\":\"Explain mobile AI in one simple sentence.\",\"conversation_history\":[]}"
-```
-
-Content generation test:
-
-```bash
-curl -X POST http://127.0.0.1:5001/generate -H "Content-Type: application/json" -d "{\"content_type\":\"article\",\"topic\":\"AI in Mobile Applications\",\"tone\":\"professional\",\"length\":\"short\",\"keywords\":[\"AI\",\"mobile\",\"React Native\"]}"
-```
-
-Profile test:
-
-```bash
-curl http://127.0.0.1:5001/profile
-```
-
-Recommendations test:
-
-```bash
-curl -X POST http://127.0.0.1:5001/recommendations -H "Content-Type: application/json" -d "{\"user_profile\":{\"interests\":[\"AI\",\"mobile development\"]},\"max_recommendations\":5}"
-```
-
-Feedback test:
-
-```bash
-curl -X POST http://127.0.0.1:5001/recommendations/feedback -H "Content-Type: application/json" -d "{\"rating\":5,\"recommendations\":[],\"user_profile\":{\"interests\":[\"AI\",\"mobile development\"]}}"
-```
 
 ### Documentation
-
-Detailed documentation is available at:
 
 ```text
 week4/day26/docs/ai-mobile-integration-guide.md
 ```
 
-### Screenshots
+---
 
-Day 26 evidence screenshots are stored in:
+# Day 27 — Full-Stack AI Capstone Project
+
+## Overview
+
+Day 27 is the final capstone project that brings together the major technologies covered during the SDA training into one integrated full-stack application.
+
+### Capstone Application
+
+**AI-Powered Task Management Platform**
+
+The project integrates:
+
+- React + TypeScript web frontend
+- Node.js + Express backend
+- REST APIs
+- Task management
+- AI assistant interface
+- Analytics
+- React Native mobile application
+- Flutter mobile application
+- Docker
+- Docker Compose
+- Kubernetes
+- GitHub Actions CI/CD
+- Backend security middleware
+- Environment-based configuration
+- Technical documentation
+- Git/GitHub delivery
+
+### Project Location
 
 ```text
-week4/day26/screenshots/
+week4/day27
 ```
 
-Expected screenshots include:
+---
+
+## Day 27 Architecture
 
 ```text
-day26-01-mobile-ai-service.png
-day26-02-health.png
-day26-03-mobile-chatbot.png
-day26-04-mobile-content-generator.png
-day26-05-mobile-recommendations.png
-day26-06-mobile-components.png
-day26-07-complete-structure.png
+                         SDA CAPSTONE
+                              |
+          +-------------------+-------------------+
+          |                   |                   |
+          v                   v                   v
+     Web Frontend        Mobile Apps          AI Layer
+     React + TS          React Native         AI Service API
+     Vite                Flutter              Service Layer
+          |                   |                   |
+          +-------------------+-------------------+
+                              |
+                              v
+                       Express Backend
+                              |
+             +----------------+----------------+
+             |                |                |
+             v                v                v
+         Task API          AI API         Analytics API
+             |
+             v
+       Docker / Compose
+             |
+             v
+        Kubernetes
+             |
+             v
+       GitHub Actions
 ```
 
-### Learning Outcomes
+---
 
-After completing Day 26, I understand:
+# Day 27 Frontend
 
-* Mobile AI integration
-* React Native AI integration
-* Flutter AI integration
-* AI chatbot development
-* Conversation history
-* Local mobile storage
-* AsyncStorage
-* SharedPreferences
-* AI content generation
-* AI recommendation systems
-* Recommendation feedback
-* Flask mobile AI backend development
-* Gemini API integration
-* Mobile REST API integration
-* Mobile AI security
-* Mobile AI performance practices
-* Battery usage considerations
-* Offline storage concepts
-* Mobile AI documentation
+## Technologies
 
-### Day 26 Completion
+- React
+- TypeScript
+- Vite
+- Lucide React
+- CSS
+- REST API communication
 
-Day 26 AI Mobile Integration has been completed and tested.
+## Main Sections
+
+- Overview
+- Tasks
+- Assistant
+- Analytics
+- Settings
+
+## Dashboard Features
+
+- Open task metrics
+- Completed task metrics
+- High-priority task metrics
+- Completion percentage
+- Recent task table
+- Assistant summary
+- Analytics information
+- Task filtering
+- Task status management
+- Task priority management
+
+## UI Design
+
+The application uses a professional dark AMOLED interface with:
+
+- High-contrast typography
+- Structured navigation
+- Dashboard metrics
+- Task tables
+- Assistant interface
+- Analytics interface
+- Responsive layout
+- Clean professional visual hierarchy
+
+---
+
+# Day 27 Task Management
+
+The task API supports:
+
+- Task creation
+- Task listing
+- Task filtering
+- Task updating
+- Task deletion
+- Task status
+- Task priority
+- Due dates
+- Tags
+
+## Task Statuses
+
+- Pending
+- In-progress
+- Completed
+
+## Task Priorities
+
+- Low
+- Medium
+- High
+
+---
+
+# Day 27 Backend
+
+## Technologies
+
+- Node.js
+- Express.js
+- CORS
+- Helmet
+- Compression
+- Morgan
+- Express Rate Limit
+- dotenv
+
+## Backend Responsibilities
+
+- REST API handling
+- Task management
+- AI API endpoints
+- Analytics
+- Health monitoring
+- Security middleware
+- Request processing
+- Error handling
+- Rate limiting
+
+## Health Endpoint
+
+```text
+GET /health
+```
+
+## Base API
+
+```text
+GET /api
+```
+
+## Task API
+
+```text
+/api/tasks
+```
+
+## AI API
+
+```text
+/api/ai
+```
+
+---
+
+# Day 27 AI Architecture
+
+The frontend communicates with the backend AI API instead of exposing an external model-provider credential directly in the browser.
+
+```text
+Frontend
+   |
+   v
+Backend AI API
+   |
+   v
+AI Service Layer
+   |
+   v
+Model / Provider
+```
+
+The Day 27 capstone uses a local AI service abstraction for the capstone API.
+
+The architecture is designed so that a production AI provider can be connected later without requiring the frontend to expose API credentials.
+
+## AI Chat Endpoint
+
+```text
+POST /api/ai/chat
+```
+
+## AI Generation Endpoint
+
+```text
+POST /api/ai/generate
+```
+
+## AI Recommendations Endpoint
+
+```text
+POST /api/ai/recommendations
+```
+
+## Analytics Endpoint
+
+```text
+GET /api/ai/analytics
+```
+
+---
+
+# Day 27 Analytics
+
+The backend provides analytics through:
+
+```text
+GET /api/ai/analytics
+```
+
+The analytics API provides task and AI-service metrics that are displayed through the web application.
+
+---
+
+# Day 27 React Native Application
+
+### Location
+
+```text
+week4/day27/mobile/react-native/
+```
+
+The React Native implementation provides a mobile version of the capstone dashboard using the same visual direction as the web application.
+
+---
+
+# Day 27 Flutter Application
+
+### Location
+
+```text
+week4/day27/mobile/flutter/
+```
+
+The Flutter implementation provides a corresponding mobile capstone dashboard using Flutter widgets.
+
+---
+
+# Day 27 Docker
+
+## Frontend Dockerfile
+
+The frontend uses a multi-stage Docker build.
+
+```text
+Node.js Build
+      |
+      v
+React Production Build
+      |
+      v
+Nginx
+      |
+      v
+Production Frontend
+```
+
+## Backend Dockerfile
+
+The backend Docker image:
+
+- Uses Node.js
+- Installs production dependencies
+- Copies backend source
+- Exposes port 5000
+- Starts the Express application
+
+## Docker Compose
+
+The Compose configuration runs:
+
+```text
+Frontend: http://localhost:5173
+Backend:  http://localhost:5000
+```
+
+Services:
+
+```text
+frontend
+backend
+```
+
+---
+
+# Day 27 Kubernetes
+
+Kubernetes configuration is located at:
+
+```text
+week4/day27/devops/k8s/
+```
+
+## Kubernetes Files
+
+```text
+devops/k8s/
+├── namespace.yaml
+├── deployment.yaml
+├── service.yaml
+└── configmap.yaml
+```
+
+## Kubernetes Features
+
+- Kubernetes namespace
+- Backend container
+- Frontend container
+- Resource requests
+- Resource limits
+- Backend liveness probe
+- Backend readiness probe
+- Backend ClusterIP service
+- Frontend NodePort service
+- ConfigMap
+- Container image configuration
+- `IfNotPresent` image policy
+
+---
+
+# Day 27 CI/CD
+
+GitHub Actions workflow:
+
+```text
+week4/day27/.github/workflows/day27-ci.yml
+```
+
+The workflow validates:
+
+- Frontend dependency installation
+- Frontend production build
+- Backend dependency installation
+- Backend JavaScript syntax
+- Docker Compose configuration
+- Docker image builds
+
+The workflow runs for:
+
+- `develop`
+- `feature/day27-capstone-project`
+
+Pull requests targeting `develop` are also validated.
+
+---
+
+# Day 27 Security
+
+The backend includes:
+
+- Helmet security middleware
+- CORS configuration
+- Express rate limiting
+- JSON request-size limiting
+- Environment-variable configuration
+- Centralized error handling
+
+Sensitive local environment files are excluded through `.gitignore`.
+
+No real API credentials are intended to be committed to the repository.
+
+---
+
+# Day 27 Project Structure
+
+```text
+week4/day27/
+├── frontend/
+│   └── src/
+│       ├── components/
+│       ├── pages/
+│       ├── layouts/
+│       ├── services/
+│       ├── hooks/
+│       ├── types/
+│       └── utils/
+│
+├── backend/
+│   └── src/
+│       ├── routes/
+│       ├── controllers/
+│       ├── services/
+│       ├── middleware/
+│       ├── models/
+│       └── utils/
+│
+├── mobile/
+│   ├── react-native/
+│   └── flutter/
+│
+├── ai/
+│
+├── devops/
+│   ├── docker/
+│   ├── k8s/
+│   └── nginx/
+│
+├── docs/
+├── scripts/
+├── screenshots/
+│
+├── docker-compose.yml
+├── .env.example
+└── .gitignore
+```
+
+---
+
+# Day 27 Documentation
+
+Detailed project documentation is available at:
+
+```text
+week4/day27/docs/PROJECT_REPORT.md
+```
+
+The project report covers:
+
+- Executive Summary
+- Project Overview
+- Objectives
+- Core Features
+- Frontend
+- Backend
+- Backend Security
+- Mobile Applications
+- AI Architecture
+- Docker
+- Kubernetes
+- CI/CD
+- Project Structure
+- API Architecture
+- Development Workflow
+- Testing and Validation
+- Deployment Architecture
+- Environment Configuration
+- Performance and Reliability
+- Future Enhancements
+- Learning Outcomes
+- Day 27 Deliverables
+- Success Criteria
+- Conclusion
+
+---
+
+# Day 27 Testing and Validation
+
+## Frontend Production Build
+
+```bash
+npm run build
+```
+
+## Backend JavaScript Validation
+
+```bash
+node --check src/server.js
+```
+
+## Docker Compose Validation
+
+```bash
+docker compose config
+```
+
+## Docker Image Build
+
+```bash
+docker compose build
+```
+
+## Container Status
+
+```bash
+docker compose ps
+```
+
+## Backend Health Check
+
+```bash
+curl http://localhost:5000/health
+```
+
+## Base API Check
+
+```bash
+curl http://localhost:5000/api
+```
+
+## Task API Check
+
+```bash
+curl http://localhost:5000/api/tasks
+```
+
+## AI API Check
+
+```bash
+curl -X POST http://localhost:5000/api/ai/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message":"Hello from Day 27 validation"}'
+```
+
+## Analytics API Check
+
+```bash
+curl http://localhost:5000/api/ai/analytics
+```
+
+## Frontend HTTP Check
+
+```bash
+curl -I http://localhost:5173
+```
+
+---
+
+# Day 27 Validation Result
+
+The completed validation confirmed:
+
+- Frontend build: PASSED
+- Backend syntax: PASSED
+- Docker Compose: VALID
+- Docker image build: PASSED
+- Backend health: PASSED
+- Base API: PASSED
+- Task API: PASSED
+- AI API: PASSED
+- Analytics API: PASSED
+- Frontend HTTP: PASSED
+- Kubernetes files: PRESENT
+- CI/CD workflow: PRESENT
+- Documentation: PRESENT
+- Git validation: PASSED
+
+---
+
+# Day 27 Deliverables
+
+- React + TypeScript web frontend
+- Professional dark AMOLED dashboard
+- Task management interface
+- Task REST API
+- AI assistant interface
+- AI API
+- Analytics dashboard
+- Analytics API
+- Backend health endpoint
+- Node.js + Express backend
+- Backend security middleware
+- React Native mobile application
+- Flutter mobile application
+- Frontend Dockerfile
+- Backend Dockerfile
+- Docker Compose configuration
+- Kubernetes namespace
+- Kubernetes deployment
+- Kubernetes services
+- Kubernetes ConfigMap
+- Kubernetes health probes
+- GitHub Actions CI/CD workflow
+- Project documentation
+- Validation workflow
+- Git/GitHub delivery
+
+---
+
+# Day 27 Learning Outcomes
+
+After completing Day 27, I understand:
+
+- Full-stack application development
+- React and TypeScript development
+- Vite
+- Node.js
+- Express.js
+- REST API development
+- Task-management API design
+- AI service architecture
+- AI API integration
+- React Native development
+- Flutter development
+- Docker
+- Docker Compose
+- Kubernetes configuration
+- GitHub Actions
+- CI/CD
+- Backend security practices
+- Environment configuration
+- Application validation
+- Git and GitHub workflow
+- Technical documentation
+
+---
+
+# Day 27 Git Delivery
+
+Day 27 was developed on:
+
+```text
+feature/day27-capstone-project
+```
+
+Target branch:
+
+```text
+develop
+```
+
+The feature branch was pushed to the repository and prepared for a pull request.
+
+## Day 27 Commit
+
+```text
+Complete Day 27: Capstone Project
+```
+
+---
+
+# Future Enhancements
+
+Possible future improvements include:
+
+- Production database integration
+- User authentication
+- Role-based authorization
+- Real-time collaboration
+- WebSocket communication
+- Production AI provider integration
+- Advanced AI recommendations
+- Push notifications
+- Offline synchronization
+- Advanced analytics
+- Automated cloud deployment
+- Monitoring
+- Centralized logging
+- Automated test coverage
+- Production observability
+- Horizontal scaling
+
+---
+
+# Conclusion
+
+The SDA Training repository documents the complete 4-week Mechlin Tech training journey.
+
+The training progresses from web development and software engineering fundamentals through backend development, databases, APIs, DevOps, Docker, Kubernetes, CI/CD, mobile development, Artificial Intelligence, Machine Learning, Generative AI, AI agents, AI web integration, and AI mobile integration.
+
+Day 27 brings these areas together in a full-stack capstone project demonstrating:
+
+- Frontend development
+- Backend API development
+- Mobile development
+- AI service architecture
+- Task management
+- Analytics
+- Docker containerization
+- Docker Compose
+- Kubernetes configuration
+- CI/CD
+- Security practices
+- Application validation
+- Technical documentation
+- Git and GitHub delivery
+
+The repository represents the complete progression of the SDA training program from foundational concepts to an integrated full-stack capstone application.
