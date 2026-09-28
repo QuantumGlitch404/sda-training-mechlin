@@ -1,0 +1,48 @@
+name: Day 27 Capstone CI
+
+on:
+  push:
+    branches:
+      - develop
+      - feature/day27-capstone-project
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  validate:
+    name: Validate Capstone
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install frontend dependencies
+        working-directory: week4/day27/frontend
+        run: npm ci
+
+      - name: Build frontend
+        working-directory: week4/day27/frontend
+        run: npm run build
+
+      - name: Install backend dependencies
+        working-directory: week4/day27/backend
+        run: npm ci
+
+      - name: Validate backend JavaScript
+        working-directory: week4/day27/backend
+        run: node --check src/server.js
+
+      - name: Validate Docker Compose
+        working-directory: week4/day27
+        run: docker compose config
+
+      - name: Build Docker images
+        working-directory: week4/day27
+        run: docker compose build
