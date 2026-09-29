@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sda-capstone-config
+  namespace: sda-capstone
+data:
+  NODE_ENV: "production"
+  PORT: "5000"

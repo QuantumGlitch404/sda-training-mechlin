@@ -1,0 +1,17 @@
+node_modules/
+.env
+.env.*
+!.env.example
+dist/
+build/
+coverage/
+*.log
+.DS_Store
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+mobile/react-native/.expo/
+mobile/react-native/node_modules/
+mobile/flutter/.dart_tool/
+mobile/flutter/build/
